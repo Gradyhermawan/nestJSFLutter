@@ -1,7 +1,9 @@
 import 'package:coba/CreateBarang.dart';
 import 'package:coba/Model/barang.dart';
+import 'package:coba/UpdateBarang.dart';
 import 'package:coba/api.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart';
 
 class Barang extends StatelessWidget {
   const Barang({super.key});
@@ -71,10 +73,33 @@ class Barang extends StatelessWidget {
                           DataCell(Text(u.nama,style:const TextStyle(color: Colors.black87))),
                           DataCell(Text(u.jumlah,style:const TextStyle(color: Colors.black87))),
                           DataCell(TextButton(onPressed: () {
-                            
+                            Navigator.pushNamed(context, updateBarangPage.route,arguments: BarangModel(id: u.id,nama: u.nama, jumlah: u.jumlah));
+                            // Navigator.of(context).push(MaterialPageRoute(
+                            //     builder: (context) => updateBarangPage(barangModel: BarangModel(id:,nama: u.nama, jumlah: jumlah.text) )));
+                            // try{
+                            //
+                            //   API.fetch("barangs/${u.id}", "update");
+                            //   const snackBar = SnackBar(
+                            //     content: Text('Berhasil Update barang'),
+                            //   );
+                            //
+                            //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                            // }catch(e){
+                            //   print(e.toString());
+                            // }
                           }, child: const Text("Edit"))),
                           DataCell(TextButton(onPressed: () {
-                            
+                            try{
+                              API.fetch("barangs/${u.id}", "delete");
+                              const snackBar = SnackBar(
+                                content: Text('Berhasil Delete barang'),
+                              );
+
+                              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                            }catch(e){
+                              print(e.toString());
+                            }
+
                           }, child: const Text("Delete")))
                         ]),
                   )

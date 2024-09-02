@@ -12,8 +12,10 @@ class API {
       return response;
     }
     else if(method=="delete"){
-      uri = Uri.http(baseURL, "/$url");
       var response = await http.delete(uri,headers: {"Content-Type": 'application/x-www-form-urlencoded'});
+      return response;
+    }else if(method=="update"){
+      var response = await http.patch(uri,headers: {"Content-Type": 'application/x-www-form-urlencoded'},body: jsonDecode(payload));
       return response;
     }
     var response = await http.get(uri, headers: {"Content-Type": 'application/json'});
