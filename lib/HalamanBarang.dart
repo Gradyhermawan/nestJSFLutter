@@ -1,4 +1,5 @@
 import 'package:coba/CreateBarang.dart';
+import 'package:coba/Menu.dart';
 import 'package:coba/Model/barang.dart';
 import 'package:coba/UpdateBarang.dart';
 import 'package:coba/api.dart';
@@ -22,6 +23,9 @@ class Barang extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+          TextButton(onPressed: () {
+            Navigator.pushNamed(context, ContohMenu.route);
+          }, child: const Text("Pindah Ke Menu")),
           TextButton(onPressed: () {
             Navigator.pushNamed(context, createBarangPage.route);
           }, child: const Text("Create")),
