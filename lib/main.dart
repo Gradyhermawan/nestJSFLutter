@@ -1,4 +1,5 @@
 import 'package:coba/HalamanBarang.dart';
+import 'package:coba/PrintBluetooth.dart';
 import 'package:coba/login.dart';
 import 'package:coba/routes.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const LoginPage(),
+      home: const PrintPage(),
       routes: routes,
     );
   }
