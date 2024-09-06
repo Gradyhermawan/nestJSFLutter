@@ -39,6 +39,7 @@ dependencies:
   bluetooth_print: ^4.3.0
   permission_handler: ^11.3.1
   blue_print_pos: ^0.0.14
+  qr_flutter: ^4.1.0
 
 dev_dependencies:
   flutter_test:

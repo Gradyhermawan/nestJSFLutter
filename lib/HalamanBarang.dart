@@ -4,7 +4,6 @@ import 'package:coba/Model/barang.dart';
 import 'package:coba/UpdateBarang.dart';
 import 'package:coba/api.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 class Barang extends StatelessWidget {
   const Barang({super.key});
